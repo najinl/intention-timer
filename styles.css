@@ -1,0 +1,149 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #2B2733;
+  margin: 0;
+  min-height: 100%;
+
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  color: #FFF;
+  font-size: 10px;
+  background-color: #46424D;
+}
+
+main {
+  background-color:#2B2733;
+  display: flex;
+  min-height: 100%;
+}
+
+h2 {
+  color: #CBC9CF;
+  padding-top: 1em;
+  padding-left: 1em;
+  font-size: 22px;
+}
+
+hr {
+  border: 1px solid #46424D;
+  margin-top: 0;
+  margin-bottom: 0;
+  
+}
+
+.new-activities-section {
+  width: 60%;
+}
+
+.past-activities {
+  width: 30%;
+}
+
+.words {
+  color: #CBC9CF;
+  margin-top: 30px;
+  padding-left: 1em;
+  text-align: center;
+}
+
+p {
+  font-size: 14;
+}
+
+.form-container {
+  background-color: #46424D;
+  margin: 30px;
+  padding: 3rem 5rem 4rem 5rem;
+  width: 77%;
+  min-height: 35%;
+  color: white;
+  border-radius: 1%;
+  box-shadow: 5px 5px 5px #202020;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-button {
+  width: 8rem;
+  background: transparent;
+  border:1.5px solid white;
+  border-radius: 5%;
+  color: white;
+  font-size: 14px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container img {
+  height: 25px;
+  width: 25px;
+}
+
+
+.prompt {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+label {
+  display: block;
+  margin-bottom: 25px;
+  margin-right: 150px;
+}
+
+.input-field {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  margin-top: 1em;
+  color: white;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4em;
+}
+
+.minute {
+  margin-right: 5em;
+  width: 50%;
+}
+
+.second {
+  width: 50%;
+  
+}
+
+.start-btn-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.start-btn {
+  height: 35px;
+  width: 30%;
+  border-radius: 8%;
+  font-size: 16px;
+  float: right;
+}
+
+/* Main background: #2B2733
+Text on main background: #CBC9CF
+Header, cards: #46424D
+Card shadow: #26222D
+Text on header and cards: #FFF
+Study: #B3FD78
+Meditate: #C278FD
+Exercise: #FD8078
+Error: #EFB7EC */
