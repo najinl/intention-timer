@@ -31,7 +31,7 @@ hr {
   border: 1px solid #46424D;
   margin-top: 0;
   margin-bottom: 0;
-  
+
 }
 
 .new-activities-section {
@@ -122,7 +122,7 @@ label {
 
 .second {
   width: 50%;
-  
+
 }
 
 .start-btn-container {
@@ -137,6 +137,20 @@ label {
   font-size: 16px;
   float: right;
 }
+
+.study-btn {
+  border-color: #B3FD78;
+}
+
+.meditate-btn {
+  border-color: #C278FD;
+}
+.excercise-btn {
+  border-color: #FD8078;
+}
+
+
+
 
 /* Main background: #2B2733
 Text on main background: #CBC9CF
