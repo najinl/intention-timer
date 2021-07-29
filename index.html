@@ -7,60 +7,26 @@
     <header>
       <h1>INTENTION TIMER</h1>
     </header>
-    <main>
-      <!-- create ALL the Left container -->
-      <section class="new-activity-section">
-        <!-- create header for left container -->
-        <h2 class="new-activity">New Activity</h2>
-        <div class="form-container">
-          <!-- create body of left container -->
-          <section class="new-act-section"></section>
-          <!-- create 3 children buttons for study, meditate, exercise inside left container -->
-        <form class="form" id="form">
-          <section class="buttons">
-            <button type="button" class="form-button" id="Study">
-              <img src="assets/study.svg" alt="light-bulb" class="study">Study</button>
-            <button type="button" class="form-button" id="Meditate">
-              <img src="assets/meditate.svg" alt="lotus" class="meditate">Meditate</button>
-            <button type="button" class="form-button" id="Exercise">
-              <img src="assets/exercise.svg" alt="shoe" class="exercise">Exercise </button>
+    <section class="main-page">
+      <section class="new-activity">
+        <h2 class="new-act-header">New Activity</h2>
+        <section class="activity-box">
+        <h3 class="form-title">Select a category:</h3>
+        <form class=actv-control-center>
+          <section class="actv-button-row" id="actv-buttons">
+          <!-- <h3 class="form-title">Select a Category:</h3> -->
+            <button name="actv-btn" class="button study-button" id="study-button"><br>Study</button>
+            <button name="actv-btn" class="button meditate-button" id="meditate-button"><br>Meditate</button>
+            <button name="actv-btn" class="button exercise-button"  id="exercise-button"><br>Exercise</button>
           </section>
-          <!-- create prompt input field -->
-          <section class="prompt">
-            <label for="accomplishment">What would you like to accomplish during this time?</label>
-            <input type="text" id="accomplishment" class="input-field">
-          </section>
-          <!-- create input field for minutes and seconds -->
-            <section class="time">
-              <section class="minute">
-                <label for="minutes">Minutes</label>
-                <input type="number" id="minutes" class="input-field">
-              </section>
-              <section class="second">
-                <label for="seconds">Seconds</label>
-                <input type="number" id="seconds" class="input-field">
-              </section>
-            </section>
-            <!-- create button should submit inputted information? -->
-            <section class="start-btn-container">
-              <input type="submit" value="START ACTIVITY" class="start-btn">
-           </section>
-          </form>
-        </div>
-      </section>
-      <!-- STUPID BORDER -->
-      <hr>
-      <!-- DUMB BORDER -->
-      <!-- Create container right of the border -->
-      <section class="past-activities">
-        <h2>Past Activities</h2>
-        <section class="words">
-          <p>You haven't logged any activities yet.</p>
-          <p>Complete the form to the left to get started!</p>
+        </form>
         </section>
       </section>
-    </main>
-    <script src="activity.js"></script>
-    <script src="main.js"></script>
+      <section class="past-activity">
+       <h2 class="past-act-header">Past Activity</h2>
+      </section>
+    </section>
   </body>
+<!-- <script src="activity.js"></script> -->
+    <script src="main.js"></script>
 </html>

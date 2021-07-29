@@ -1,76 +1,63 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #2B2733;
-  margin: 0;
-  min-height: 100%;
-
+  margin: 0px;
 }
-
 header {
-  display: flex;
-  justify-content: center;
-  color: #FFF;
-  font-size: 10px;
-  background-color: #46424D;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: #FFF;
+ font-size: 10px;
+ background-color: #46424D;
+ margin: 0px;
 }
-
-main {
-  background-color:#2B2733;
-  display: flex;
-  min-height: 100%;
-}
-
 h2 {
   color: #CBC9CF;
-  padding-top: 1em;
-  padding-left: 1em;
+  padding: 10px 10px 0px 33px;
+  /* padding-bottom: 0px;
+  padding-left: 32px; */
   font-size: 22px;
 }
-
-hr {
-  border: 1px solid #46424D;
-  margin-top: 0;
-  margin-bottom: 0;
-
+.main-page {
+ display: flex;
+ align-items: flex-start;
+ width: 100%;
+ /* height: 100%; */
+ height: 1220px;
+ border: 2px solid green;
 }
-
-.new-activities-section {
-  width: 60%;
+.new-activity {
+  flex: 2;
+  border: 2px solid green;
+  margin-top: 0px;
 }
-
-.past-activities {
-  width: 30%;
+.past-activity {
+  flex: 1;
+  border: 2px solid black;
 }
-
-.words {
-  color: #CBC9CF;
-  margin-top: 30px;
-  padding-left: 1em;
-  text-align: center;
+.form-title {
+  font-size: 17px;
+  margin-bottom: 10px;
+  padding-left: 65px;
 }
-
-p {
-  font-size: 14;
-}
-
-.form-container {
+.activity-box {
   background-color: #46424D;
-  margin: 30px;
-  padding: 3rem 5rem 4rem 5rem;
-  width: 77%;
+  height: 500px;
+  width: 93%;
+  background-color: #46424D;
+  margin: 0px 30px 30px 30px;
+  padding: 10px 0px 10px 10px;
   min-height: 35%;
   color: white;
   border-radius: 1%;
   box-shadow: 5px 5px 5px #202020;
-}
-
-.buttons {
   display: flex;
-  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
 }
-
-.form-button {
-  width: 8rem;
+.button {
+  width: 140px;
   background: transparent;
   border:1.5px solid white;
   border-radius: 5%;
@@ -78,74 +65,63 @@ p {
   font-size: 14px;
   height: 60px;
   display: flex;
+  background-repeat: no-repeat;
+  background-size: 2em;
+  background-position: 50% 20%;
+  padding-top: 2em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-.form-container img {
-  height: 25px;
-  width: 25px;
+.actv-button-row {
+  padding-top: 0px;
+  margin-top: 0px;
+  border: 2px solid red;
+  width: 700px;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
 }
 
-
-.prompt {
-  padding-top: 4em;
-  padding-bottom: 4em;
-}
-
-label {
+.study-button {
+  background-image: url("./assets/study.svg");
   display: block;
-  margin-bottom: 25px;
-  margin-right: 150px;
+}
+.meditate-button {
+  background-image: url("./assets/meditate.svg");
+  display: block;
+}
+.exercise-button {
+  background-image: url("./assets/exercise.svg");
+  display: block;
 }
 
-.input-field {
-  border: none;
-  background: transparent;
-  border-bottom: 1px solid #fff;
-  width: 100%;
-  margin-top: 1em;
-  color: white;
-}
-
-.time {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 4em;
-}
-
-.minute {
-  margin-right: 5em;
-  width: 50%;
-}
-
-.second {
-  width: 50%;
-
-}
-
-.start-btn-container {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.start-btn {
-  height: 35px;
-  width: 30%;
-  border-radius: 8%;
-  font-size: 16px;
-  float: right;
-}
-
-.study-btn {
+.active-study {
+  background-image: url("./assets/study-active.svg");
+  background-repeat: no-repeat;
+  background-size: 2em;
+  background-position: 50% 20%;
+  padding-top: 2em;
+  color: #B3FD78;
   border-color: #B3FD78;
 }
-
-.meditate-btn {
+.active-meditate {
+  background-image: url("./assets/meditate-active.svg");
+  background-repeat: no-repeat;
+  background-size: 2em;
+  background-position: 50% 20%;
+  padding-top: 2em;
+  color: #C278FD;
   border-color: #C278FD;
 }
-.excercise-btn {
+.active-exercise {
+  background-image: url("./assets/exercise-active.svg");
+  background-repeat: no-repeat;
+  background-size: 2em;
+  background-position: 50% 20%;
+  padding-top: 2em;
+  color: #FD8078;
   border-color: #FD8078;
 }
 
