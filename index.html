@@ -21,17 +21,21 @@
           </section>
           <section class="prompt">
             <label for="accomplishment">What would you like to accomplish during this time?</label>
-            <input type="text" id="accomplishment" class="input-field">
+            <input type="text" id="accomplishment" class="input-field warning-field">
+            <!-- <img src="./assets/warning.svg" class"warning-message" alt="Warning image, a description is required!"> -->
+            <p class="warning-message hidden"><img class="warning-image" src="./assets/warning.svg"> A description is required.</p>
           </section>
           <!-- create input field for minutes and seconds -->
             <section class="time">
               <section class="minute">
                 <label for="minutes">Minutes</label>
-                <input type="number" id="minutes" class="input-field">
+                <input type="number" id="minutes" class="input-field warning-field">
+                <p class="warning-message hidden"><img class="warning-image" src="./assets/warning.svg"> A description is required.</p>
               </section>
               <section class="second">
                 <label for="seconds">Seconds</label>
-                <input type="number" id="seconds" class="input-field">
+                <input type="number" id="seconds" class="input-field warning-field">
+                <p class="warning-message hidden"><img class="warning-image" src="./assets/warning.svg"> A description is required.</p>
               </section>
             </section>
             <!-- create button should submit inputted information? -->
