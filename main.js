@@ -3,6 +3,11 @@ var studyBtn = document.querySelector('#study-button');
 var meditateBtn = document.querySelector('#meditate-button');
 var exerciseBtn = document.querySelector('#exercise-button');
 var inputFields = document.querySelector('.time');
+var accomplishment = document.querySelector('#accomplishment');
+var minutes = document.querySelector('#minutes');
+var seconds = document.querySelector('#seconds');
+var submitBtn = document.querySelector('.start-btn');
+var warningMsgAcc = document.querySelector('.warning-message');
 
 var invalidCharacters = [
   '-',
@@ -12,18 +17,31 @@ var invalidCharacters = [
 
 activityBtns.addEventListener('click', displayActiveActivity);
 inputFields.addEventListener('keydown', function(e) {
-//   function eNo(e) {
-//   var noE = ["e", "E"];
-//   if (noE.includes(e.key)) {
-//     event.preventDefault();
-//   }
-// }
   if (invalidCharacters.includes(e.key)) {
     e.preventDefault();
   }
-})
+});
+submitBtn.addEventListener('click', checkForm);
 
+function checkForm() {
+  event.preventDefault();
+  if (!accomplishment.value) {
+    warningMsgAcc.classList.remove('hidden');
+  }
+};
 
+// Goal:  Show an error message when accomplishment, minutes or seconds field are empty.  We
+//        want the message to appear under whichever field is empty.
+
+// Input: .value from all fields.  Submit button (event listener).
+
+// Output: Warning message. CSS styling for message.
+
+// Steps:  Access values from the input fields.
+//         Add event listener for the submit button.
+//         Add event handler for submit button.  This button will check if any of the fields
+// are empty.  If a field is empty, display an error message on the fields that do not have
+// an input.  It should also change the color of the input line.
 
 function displayActiveActivity(e) {
   e.preventDefault();
