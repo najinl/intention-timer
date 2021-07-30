@@ -19,11 +19,34 @@
             <button name="actv-btn" class="button meditate-button" id="meditate-button"><br>Meditate</button>
             <button name="actv-btn" class="button exercise-button"  id="exercise-button"><br>Exercise</button>
           </section>
+          <section class="prompt">
+            <label for="accomplishment">What would you like to accomplish during this time?</label>
+            <input type="text" id="accomplishment" class="input-field">
+          </section>
+          <!-- create input field for minutes and seconds -->
+            <section class="time">
+              <section class="minute">
+                <label for="minutes">Minutes</label>
+                <input type="number" id="minutes" class="input-field">
+              </section>
+              <section class="second">
+                <label for="seconds">Seconds</label>
+                <input type="number" id="seconds" class="input-field">
+              </section>
+            </section>
+            <!-- create button should submit inputted information? -->
+            <section class="start-btn-container">
+              <input type="submit" value="START ACTIVITY" class="start-btn">
+           </section>
         </form>
-        </section>
+      </section>
       </section>
       <section class="past-activity">
        <h2 class="past-act-header">Past Activity</h2>
+       <section class="words">
+        <p>You haven't logged any activities yet.</p>
+        <p>Complete the form to the left to get started!</p>
+      </section>
       </section>
     </section>
   </body>

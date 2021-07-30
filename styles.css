@@ -15,49 +15,45 @@ header {
 h2 {
   color: #CBC9CF;
   padding: 10px 10px 0px 33px;
-  /* padding-bottom: 0px;
-  padding-left: 32px; */
   font-size: 22px;
 }
 .main-page {
  display: flex;
  align-items: flex-start;
  width: 100%;
- /* height: 100%; */
- height: 1220px;
- border: 2px solid green;
+ max-height: 100%;
 }
 .new-activity {
   flex: 2;
-  border: 2px solid green;
+  border-right: 2px solid #46424D;
   margin-top: 0px;
 }
 .past-activity {
   flex: 1;
-  border: 2px solid black;
+  width: 30%;
+}
+.words {
+  color: #CBC9CF;
+  margin-top: 30px;
+  padding-left: 1em;
+  text-align: center;
 }
 .form-title {
   font-size: 17px;
   margin-bottom: 10px;
-  padding-left: 65px;
 }
 .activity-box {
   background-color: #46424D;
-  height: 500px;
-  width: 93%;
-  background-color: #46424D;
-  margin: 0px 30px 30px 30px;
-  padding: 10px 0px 10px 10px;
+  margin: 30px;
+  padding: 3rem 5rem 4rem 5rem;
+  width: 77%;
   min-height: 35%;
   color: white;
   border-radius: 1%;
   box-shadow: 5px 5px 5px #202020;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
 }
 .button {
-  width: 140px;
+  width: 8rem;
   background: transparent;
   border:1.5px solid white;
   border-radius: 5%;
@@ -76,14 +72,11 @@ h2 {
 .actv-button-row {
   padding-top: 0px;
   margin-top: 0px;
-  border: 2px solid red;
-  width: 700px;
-  height: 300px;
+  width: 90%;
   display: flex;
-  justify-content: space-evenly;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items:flex-start;
 }
-
 .study-button {
   background-image: url("./assets/study.svg");
   display: block;
@@ -96,7 +89,6 @@ h2 {
   background-image: url("./assets/exercise.svg");
   display: block;
 }
-
 .active-study {
   background-image: url("./assets/study-active.svg");
   background-repeat: no-repeat;
@@ -123,6 +115,39 @@ h2 {
   padding-top: 2em;
   color: #FD8078;
   border-color: #FD8078;
+}
+.prompt {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+label {
+  display: block;
+  margin-bottom: 25px;
+  margin-right: 150px;
+}
+.input-field {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  margin-top: 1em;
+  color: white;
+}
+.time {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4em;
+}
+.minute {
+  margin-right: 5em;
+  width: 50%;
+}
+.second {
+  width: 50%;
+}
+.start-btn-container {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 
