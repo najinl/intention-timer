@@ -2,50 +2,59 @@ var activityBtns = document.querySelector('.actv-button-row');
 var studyBtn = document.querySelector('#study-button');
 var meditateBtn = document.querySelector('#meditate-button');
 var exerciseBtn = document.querySelector('#exercise-button');
-var inputFields = document.querySelector('.time');
+var inputTimeFields = document.querySelector('.time');
 var accomplishment = document.querySelector('#accomplishment');
 var minutes = document.querySelector('#minutes');
 var seconds = document.querySelector('#seconds');
 var submitBtn = document.querySelector('.start-btn');
-var warningMsgAcc = document.querySelector('.warning-message');
-
+var warningMsgAcc = document.querySelector('#warningMsgAccomp');
+var warningMsgMin = document.querySelector('#warningMsgMin');
+var warningMsgSec = document.querySelector('#warningMsgSec');
+var inputFields = document.querySelectorAll('.input-field');
+var category;
 var invalidCharacters = [
   '-',
   '+',
   'e',
 ];
+var activityToAdd = [];
 
 activityBtns.addEventListener('click', displayActiveActivity);
-inputFields.addEventListener('keydown', function(e) {
+
+inputTimeFields.addEventListener('keydown', function(e) {
   if (invalidCharacters.includes(e.key)) {
     e.preventDefault();
   }
 });
+
 submitBtn.addEventListener('click', checkForm);
+
+
 
 function checkForm() {
   event.preventDefault();
-  if (!accomplishment.value) {
-    warningMsgAcc.classList.remove('hidden');
+  var warningMsg = '<img class="warning-image" src="./assets/warning.svg"> A description is required.';
+  for(var i = 0; i < inputFields.length; i++) {
+    if (!inputFields[i].value && inputFields[i].id === "accomplishment") {
+      warningMsgAcc.innerHTML = warningMsg;
+    } else if (!inputFields[i].value && inputFields[i].id === "minutes") {
+      warningMsgMin.innerHTML = warningMsg;
+    } else if (!inputFields[i].value && inputFields[i].id === "seconds") {
+      warningMsgSec.innerHTML = warningMsg;
+    }
   }
+  instantiateNewActivity();
 };
 
-// Goal:  Show an error message when accomplishment, minutes or seconds field are empty.  We
-//        want the message to appear under whichever field is empty.
-
-// Input: .value from all fields.  Submit button (event listener).
-
-// Output: Warning message. CSS styling for message.
-
-// Steps:  Access values from the input fields.
-//         Add event listener for the submit button.
-//         Add event handler for submit button.  This button will check if any of the fields
-// are empty.  If a field is empty, display an error message on the fields that do not have
-// an input.  It should also change the color of the input line.
+function instantiateNewActivity() {
+  var newActivity = new Activity(category, accomplishment.value, minutes.value, seconds.value);
+  activityToAdd.push(newActivity);
+}
 
 function displayActiveActivity(e) {
   e.preventDefault();
   var btnID = event.target.id;
+  category = event.target.innerText;
   if (btnID === "study-button") {
     event.target.className += ' active-study';
     meditateBtn.classList.remove('active-meditate');
