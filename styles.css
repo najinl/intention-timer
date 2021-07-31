@@ -64,10 +64,11 @@ h2 {
   background-repeat: no-repeat;
   background-size: 2em;
   background-position: 50% 20%;
-  padding-top: 2em;
+  padding-top: 2.5em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .actv-button-row {
   padding-top: 0px;
@@ -94,7 +95,6 @@ h2 {
   background-repeat: no-repeat;
   background-size: 2em;
   background-position: 50% 20%;
-  padding-top: 2em;
   color: #B3FD78;
   border-color: #B3FD78;
 }
@@ -103,7 +103,6 @@ h2 {
   background-repeat: no-repeat;
   background-size: 2em;
   background-position: 50% 20%;
-  padding-top: 2em;
   color: #C278FD;
   border-color: #C278FD;
 }
@@ -112,7 +111,6 @@ h2 {
   background-repeat: no-repeat;
   background-size: 2em;
   background-position: 50% 20%;
-  padding-top: 2em;
   color: #FD8078;
   border-color: #FD8078;
 }
@@ -137,23 +135,19 @@ label {
   margin-right: 150px;
 }
 
-
-.warning-field {
-  border-bottom: 1px solid #EFB7EC;
-}
-
 .input-field {
   border: none;
   background: transparent;
-  /* border-bottom: 1px solid #fff; */
+  border-bottom: 1px solid #fff;
   width: 100%;
   margin-top: 1em;
   color: white;
+  pointer: text;
 }
 
-.warning-field {
+/* .warning-field {
   border-bottom: 1px solid #EFB7EC;
-}
+} */
 
 .time {
   display: flex;
@@ -170,6 +164,10 @@ label {
 .start-btn-container {
   display: flex;
   flex-direction: row-reverse;
+}
+
+.start-btn {
+  cursor: pointer;
 }
 
 .hidden {
