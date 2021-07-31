@@ -38,7 +38,7 @@ h2 {
   padding-left: 1em;
   text-align: center;
 }
-.form-title {
+.select-category {
   font-size: 17px;
   margin-bottom: 10px;
 }
@@ -51,6 +51,28 @@ h2 {
   color: white;
   border-radius: 1%;
   box-shadow: 5px 5px 5px #202020;
+}
+.study-timer {
+  border-color: #B3FD78;
+}
+.meditate-timer {
+  border-color: #C278FD;
+}
+.exercise-timer {
+  border-color: #FD8078;
+}
+.start-button {
+/*   display: inline-block; */
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 10px;
+  background: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #FFF;
+  font-weight: 300;
 }
 .button {
   width: 8rem;
@@ -69,6 +91,15 @@ h2 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.activity-timer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 300;
+  /* padding-bottom: 200px; */
 }
 .actv-button-row {
   padding-top: 0px;
@@ -114,17 +145,14 @@ h2 {
   color: #FD8078;
   border-color: #FD8078;
 }
-
 .warning-message {
   color: #EFB7EC;
   font-weight: bold;
 }
-
 .warning-image {
   max-width: 20px;
   max-height: 20px;
 }
-
 .prompt {
   padding-top: 4em;
   padding-bottom: 4em;
@@ -134,7 +162,6 @@ label {
   margin-bottom: 25px;
   margin-right: 150px;
 }
-
 .input-field {
   border: none;
   background: transparent;
@@ -144,11 +171,9 @@ label {
   color: white;
   pointer: text;
 }
-
 /* .warning-field {
   border-bottom: 1px solid #EFB7EC;
 } */
-
 .time {
   display: flex;
   justify-content: space-between;
@@ -165,16 +190,16 @@ label {
   display: flex;
   flex-direction: row-reverse;
 }
-
 .start-btn {
   cursor: pointer;
 }
-
+.countdown {
+  font-size: 70px;
+  font-weight: 400;
+}
 .hidden {
   display: none;
 }
-
-
 /* Main background: #2B2733
 Text on main background: #CBC9CF
 Header, cards: #46424D
@@ -184,3 +209,5 @@ Study: #B3FD78
 Meditate: #C278FD
 Exercise: #FD8078
 Error: #EFB7EC */
+
+
