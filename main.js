@@ -25,16 +25,22 @@ var invalidCharacters = [
   'E',
 ];
 var activityToAdd = [];
+
 activityBtns.addEventListener('click', function(e) {
   e.preventDefault();
   displayActiveActivity(e);
+  changeTimerColor();
 });
+
 inputTimeFields.addEventListener('keydown', function(e) {
   if (invalidCharacters.includes(e.key)) {
     e.preventDefault();
   }
 });
-submitBtn.addEventListener('click', checkForm);
+submitBtn.addEventListener('click', function(){
+  checkForm();
+});
+
 function checkForm() {
   event.preventDefault();
   // var warningMsg = `<img class="warning-image" src="./assets/warning.svg"> A description is required.`;
@@ -66,22 +72,31 @@ function changeToTimerView() {
   timerCategory.innerText = accomplishment.value;
   counterClock.innerText = `${minutes.value}:${seconds.value}`;
   }
-  changeTimerColor();
 };
+
+
 function changeTimerColor() {
   if(category === 'Study') {
     startTimerBtn.classList.add('study-timer');
+    startTimerBtn.classList.remove('meditate-timer');
+    startTimerBtn.classList.remove('exercise-timer');
   } else if(category === 'Meditate') {
     startTimerBtn.classList.add('meditate-timer');
-  } else {
+    startTimerBtn.classList.remove('exercise-timer');
+    startTimerBtn.classList.remove('study-timer');
+  } else if(category === 'Exercise') {
     startTimerBtn.classList.add('exercise-timer');
+    startTimerBtn.classList.remove('study-timer');
+    startTimerBtn.classList.add('meditate-timer');
   }
 }
+
+
 function displayActiveActivity(e) {
   e.preventDefault();
   activityIsClicked = true;
   var btnID = event.target.id;
-  category = event.target.innerText;
+  category = event.target.innerText
   if (btnID === "study-button") {
     event.target.className += ' active-study';
     meditateBtn.classList.remove('active-meditate');
