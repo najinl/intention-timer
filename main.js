@@ -16,8 +16,11 @@ var warningMsgAcc = document.querySelector('#warningMsgAccomp');
 var warningMsgMin = document.querySelector('#warningMsgMin');
 var warningMsgSec = document.querySelector('#warningMsgSec');
 var inputFields = document.querySelectorAll('.input-field');
+var countDown = document.querySelector('.countdown');
 var category;
 var activityIsClicked = false;
+var minutes;
+var seconds;
 var invalidCharacters = [
   '-',
   '+',
@@ -37,9 +40,29 @@ inputTimeFields.addEventListener('keydown', function(e) {
     e.preventDefault();
   }
 });
-submitBtn.addEventListener('click', function(){
+submitBtn.addEventListener('click', function() {
   checkForm();
+  createCountDown();
 });
+
+startTimerBtn.addEventListener('click', startCountDown);
+
+function startCountDown() {
+  var timer = minutes, seconds;
+  setInterval(function() {
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    countDown.innerText = minutes + ':' + seconds;
+    if (--timer < 0) {
+      timer = '00:00';
+    }
+  }, 1000);
+};
+
+function createCountDown() {
+  minutes = parseInt(minutes.value, 10);
+  seconds = parseInt((seconds.value + minutes.value) % 60, 10);
+};
 
 function checkForm() {
   event.preventDefault();
