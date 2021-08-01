@@ -10,13 +10,15 @@ var inputAccompField = document.querySelector('.prompt')
 var accomplishment = document.querySelector('#accomplishment');
 var minutes = document.querySelector('#minutes');
 var seconds = document.querySelector('#seconds');
-var submitBtn = document.querySelector('.start-btn');
+var submitBtn = document.querySelector('#startActivity');
 var startTimerBtn = document.querySelector('.start-button');
 var warningMsgAcc = document.querySelector('#warningMsgAccomp');
 var warningMsgMin = document.querySelector('#warningMsgMin');
 var warningMsgSec = document.querySelector('#warningMsgSec');
 var inputFields = document.querySelectorAll('.input-field');
 var countDown = document.querySelector('.countdown');
+var logActivity = document.querySelector('#logActivity');
+var activityTimer= document.querySelector('.activity-timer');
 var category;
 var activityIsClicked = false;
 var startTime;
@@ -27,6 +29,8 @@ var invalidCharacters = [
   'E',
 ];
 var activityToAdd = [];
+
+var newActivity;
 
 activityBtns.addEventListener('click', function(e) {
   e.preventDefault();
@@ -44,31 +48,28 @@ submitBtn.addEventListener('click', function() {
   createCountDown();
 });
 
-startTimerBtn.addEventListener('click', function() {
-  startCountDown(startTime)});
 
-function startCountDown(startTime) {
-  console.log(startTime);
-  var timer = startTime, minutes, seconds;
-  setInterval(function() {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60, 10);
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-    countDown.innerText = minutes + ':' + seconds;
-    if (--timer < 0) {
-      timer = '00:00';
-    }
-  }, 1000);
+startTimerBtn.addEventListener('click', function() {
+  newActivity.countDown(startTime)});
+
+function doShit() {
+  if (startTimerBtn.innerText === 'COMPLETE!') {
+    window.alert('Activity has been completed!');
+  }
 };
 
 function createCountDown() {
   startTime = parseInt(minutes.value) * 60 + parseInt(seconds.value);
+    if(parseInt(minutes.value) < 10) {
+    minutes.value = '0' + minutes.value;
+  } if(parseInt(seconds.value) < 10) {
+    seconds.value = '0' + seconds.value;
+  }
+  countDown.innerText = `${minutes.value}:${seconds.value}`;
 };
 
 function checkForm() {
   event.preventDefault();
-  // var warningMsg = `<img class="warning-image" src="./assets/warning.svg"> A description is required.`;
   for(var i = 0; i < inputFields.length; i++) {
     if (!inputFields[i].value && inputFields[i].id === "accomplishment") {
       warningMsgAcc.innerHTML = '<img class="warning-image" src="./assets/warning.svg"> A description is required.';
@@ -82,20 +83,17 @@ function checkForm() {
   changeToTimerView();
 };
 function instantiateNewActivity() {
-  var newActivity = new Activity(category, accomplishment.value, minutes.value, seconds.value);
+  newActivity = new Activity(category, accomplishment.value, parseInt(minutes.value), parseInt(seconds.value));
   activityToAdd.push(newActivity);
 }
 function changeToTimerView() {
-  var activityTimer= document.querySelector('.activity-timer');
   var timerCategory= document.querySelector('.category-for-timer');
-  var counterClock = document.querySelector('.countdown');
   if(minutes.value && seconds.value && accomplishment.value && activityIsClicked) {
   activityControlCntr.classList.add('hidden');
   selectCategory.classList.add('hidden');
   activityTimer.classList.remove('hidden')
   activityHeader.innerText = 'Current Activity';
   timerCategory.innerText = accomplishment.value;
-  counterClock.innerText = `${minutes.value}:${seconds.value}`;
   }
 };
 

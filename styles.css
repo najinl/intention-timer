@@ -46,7 +46,7 @@ h2 {
   background-color: #46424D;
   margin: 30px;
   padding: 3rem 5rem 4rem 5rem;
-  width: 77%;
+  width: 73%;
   min-height: 35%;
   color: white;
   border-radius: 1%;
@@ -73,6 +73,7 @@ h2 {
   font-size: 22px;
   color: #FFF;
   font-weight: 300;
+  margin-bottom: 50px;
 }
 .button {
   width: 8rem;
@@ -104,7 +105,7 @@ h2 {
 .actv-button-row {
   padding-top: 0px;
   margin-top: 0px;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items:flex-start;
@@ -161,6 +162,7 @@ label {
   display: block;
   margin-bottom: 25px;
   margin-right: 150px;
+  font-size: 18px;
 }
 .input-field {
   border: none;
@@ -169,7 +171,7 @@ label {
   width: 100%;
   margin-top: 1em;
   color: white;
-  pointer: text;
+  cursor: text;
 }
 /* .warning-field {
   border-bottom: 1px solid #EFB7EC;
@@ -192,10 +194,13 @@ label {
 }
 .start-btn {
   cursor: pointer;
+  width: 250px;
+  height: 45px;
+  font-size: 18px;
 }
 .countdown {
   font-size: 70px;
-  font-weight: 400;
+  /* font-weight: 400; */
 }
 .hidden {
   display: none;
@@ -209,5 +214,12 @@ Study: #B3FD78
 Meditate: #C278FD
 Exercise: #FD8078
 Error: #EFB7EC */
-
-
+/* Main background: #2B2733
+Text on main background: #CBC9CF
+Header, cards: #46424D
+Card shadow: #26222D
+Text on header and cards: #FFF
+Study: #B3FD78
+Meditate: #C278FD
+Exercise: #FD8078
+Error: #EFB7EC */
