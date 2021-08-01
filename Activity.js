@@ -7,6 +7,7 @@ class Activity {
     this.completed = false;
     this.id = Date.now();
   }
+  
   countDown(startTime) {
       startTimerBtn.disabled = true;
       var timer = startTime, minutes, seconds;
@@ -22,6 +23,7 @@ class Activity {
         }
       }, 1000);
   };
+
   markComplete() {
     this.completed = true;
     startTimerBtn.innerText = 'COMPLETE!';

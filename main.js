@@ -66,6 +66,7 @@ function createCountDown() {
   countDown.innerText = `${minutes.value}:${seconds.value}`;
 };
 
+
 function checkForm() {
   event.preventDefault();
   for(var i = 0; i < inputFields.length; i++) {
@@ -81,12 +82,14 @@ function checkForm() {
   changeToTimerView();
 };
 
+
 function instantiateNewActivity() {
   if (minutes.value && seconds.value && accomplishment.value && activityIsClicked) {
     newActivity = new Activity(category, accomplishment.value, parseInt(minutes.value), parseInt(seconds.value));
     activityToAdd.push(newActivity);
   };
 };
+
 
 function changeToTimerView() {
   var timerCategory= document.querySelector('.category-for-timer');
@@ -98,6 +101,7 @@ function changeToTimerView() {
   timerCategory.innerText = accomplishment.value;
   }
 };
+
 
 function changeTimerColor() {
   if(category === 'Study') {
@@ -114,6 +118,7 @@ function changeTimerColor() {
     startTimerBtn.classList.add('meditate-timer');
   }
 }
+
 
 function displayActiveActivity(e) {
   e.preventDefault();
