@@ -19,18 +19,15 @@ class Activity {
         if (--timer < 0) {
           timer = 0;
           newActivity.markComplete();
-          window.alert('You done!');
         }
       }, 1000);
   };
-
   markComplete() {
     this.completed = true;
     startTimerBtn.innerText = 'COMPLETE!';
     logActivity.classList.remove('hidden');
+    displayCongratsMessage();
   };
-
   saveToStorage() {
-
   };
 };

@@ -75,6 +75,9 @@ h2 {
   font-weight: 300;
   margin-bottom: 50px;
 }
+.makeEmojiBigger {
+  font-size: 200px;
+}
 .button {
   width: 8rem;
   background: transparent;

@@ -29,7 +29,6 @@ var invalidCharacters = [
   'E',
 ];
 var activityToAdd = [];
-
 var newActivity;
 
 activityBtns.addEventListener('click', function(e) {
@@ -43,19 +42,18 @@ inputTimeFields.addEventListener('keydown', function(e) {
     e.preventDefault();
   }
 });
+
 submitBtn.addEventListener('click', function() {
   checkForm();
   createCountDown();
 });
 
-
 startTimerBtn.addEventListener('click', function() {
   newActivity.countDown(startTime)});
-
-function doShit() {
-  if (startTimerBtn.innerText === 'COMPLETE!') {
-    window.alert('Activity has been completed!');
-  }
+function displayCongratsMessage() {
+  countDown.innerText = 'Pound It!';
+  startTimerBtn.innerText = String.fromCodePoint(128074);
+  startTimerBtn.classList.add('makeEmojiBigger');
 };
 
 function createCountDown() {
@@ -82,10 +80,14 @@ function checkForm() {
   instantiateNewActivity();
   changeToTimerView();
 };
+
 function instantiateNewActivity() {
-  newActivity = new Activity(category, accomplishment.value, parseInt(minutes.value), parseInt(seconds.value));
-  activityToAdd.push(newActivity);
-}
+  if (minutes.value && seconds.value && accomplishment.value && activityIsClicked) {
+    newActivity = new Activity(category, accomplishment.value, parseInt(minutes.value), parseInt(seconds.value));
+    activityToAdd.push(newActivity);
+  };
+};
+
 function changeToTimerView() {
   var timerCategory= document.querySelector('.category-for-timer');
   if(minutes.value && seconds.value && accomplishment.value && activityIsClicked) {
@@ -96,7 +98,6 @@ function changeToTimerView() {
   timerCategory.innerText = accomplishment.value;
   }
 };
-
 
 function changeTimerColor() {
   if(category === 'Study') {
@@ -113,7 +114,6 @@ function changeTimerColor() {
     startTimerBtn.classList.add('meditate-timer');
   }
 }
-
 
 function displayActiveActivity(e) {
   e.preventDefault();
