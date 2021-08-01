@@ -19,8 +19,7 @@ var inputFields = document.querySelectorAll('.input-field');
 var countDown = document.querySelector('.countdown');
 var category;
 var activityIsClicked = false;
-var minutes;
-var seconds;
+var startTime;
 var invalidCharacters = [
   '-',
   '+',
@@ -45,11 +44,15 @@ submitBtn.addEventListener('click', function() {
   createCountDown();
 });
 
-startTimerBtn.addEventListener('click', startCountDown);
+startTimerBtn.addEventListener('click', function() {
+  startCountDown(startTime)});
 
-function startCountDown() {
-  var timer = minutes, seconds;
+function startCountDown(startTime) {
+  console.log(startTime);
+  var timer = startTime, minutes, seconds;
   setInterval(function() {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
     minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
     countDown.innerText = minutes + ':' + seconds;
@@ -60,8 +63,7 @@ function startCountDown() {
 };
 
 function createCountDown() {
-  minutes = parseInt(minutes.value, 10);
-  seconds = parseInt((seconds.value + minutes.value) % 60, 10);
+  startTime = parseInt(minutes.value) * 60 + parseInt(seconds.value);
 };
 
 function checkForm() {
