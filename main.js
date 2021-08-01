@@ -30,24 +30,34 @@ var invalidCharacters = [
 ];
 var activityToAdd = [];
 var newActivity;
-
+// Goal: When user clicks Log Activity button a card with the information from
+//       the current activity object will appear in the past activity section.
+//       Change Current Activity header to Completed Activity.  Create A New
+//       Activity button should appear in the activity area.
+// Input: newActivity.category, newActivity.description, newActivity.minutes,
+//        newActivity.seconds.
+// Output: New card with object info. Button and header text.
+// Steps: Create an event listener on log activity button
+//        Query selectors for log activity, past activity section
+//        Creat a fcn to add card.  Will hide stuff in past activity section
+//    and add cards to the DOM
+//        Change Current Activity header to Completed Activity.
+//        Create a new button "A New Activity"
+//        Display button in main activity area
 activityBtns.addEventListener('click', function(e) {
   e.preventDefault();
   displayActiveActivity(e);
   changeTimerColor();
 });
-
 inputTimeFields.addEventListener('keydown', function(e) {
   if (invalidCharacters.includes(e.key)) {
     e.preventDefault();
   }
 });
-
 submitBtn.addEventListener('click', function() {
   checkForm();
   createCountDown();
 });
-
 startTimerBtn.addEventListener('click', function() {
   newActivity.countDown(startTime)});
 function displayCongratsMessage() {
@@ -55,7 +65,6 @@ function displayCongratsMessage() {
   startTimerBtn.innerText = String.fromCodePoint(128074);
   startTimerBtn.classList.add('makeEmojiBigger');
 };
-
 function createCountDown() {
   startTime = parseInt(minutes.value) * 60 + parseInt(seconds.value);
     if(parseInt(minutes.value) < 10) {
@@ -65,8 +74,6 @@ function createCountDown() {
   }
   countDown.innerText = `${minutes.value}:${seconds.value}`;
 };
-
-
 function checkForm() {
   event.preventDefault();
   for(var i = 0; i < inputFields.length; i++) {
@@ -81,16 +88,12 @@ function checkForm() {
   instantiateNewActivity();
   changeToTimerView();
 };
-
-
 function instantiateNewActivity() {
   if (minutes.value && seconds.value && accomplishment.value && activityIsClicked) {
     newActivity = new Activity(category, accomplishment.value, parseInt(minutes.value), parseInt(seconds.value));
     activityToAdd.push(newActivity);
   };
 };
-
-
 function changeToTimerView() {
   var timerCategory= document.querySelector('.category-for-timer');
   if(minutes.value && seconds.value && accomplishment.value && activityIsClicked) {
@@ -101,8 +104,6 @@ function changeToTimerView() {
   timerCategory.innerText = accomplishment.value;
   }
 };
-
-
 function changeTimerColor() {
   if(category === 'Study') {
     startTimerBtn.classList.add('study-timer');
@@ -118,8 +119,6 @@ function changeTimerColor() {
     startTimerBtn.classList.add('meditate-timer');
   }
 }
-
-
 function displayActiveActivity(e) {
   e.preventDefault();
   activityIsClicked = true;
