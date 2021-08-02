@@ -2,6 +2,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #2B2733;
   margin: 0px;
+  font-weight: 300;
 }
 header {
  display: flex;
@@ -17,6 +18,10 @@ h2 {
   padding: 10px 10px 0px 33px;
   font-size: 22px;
 }
+
+p {
+  margin-bottom: 0px;
+}
 .main-page {
  display: flex;
  align-items: flex-start;
@@ -26,25 +31,72 @@ h2 {
 .new-activity {
   flex: 2;
   border-right: 2px solid #46424D;
-  margin-top: 0px;
+  /* margin-top: 10px; */
 }
 .past-activity {
   flex: 1;
   width: 30%;
 }
-.words {
+
+.no-activity-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #CBC9CF;
-  margin-top: 30px;
-  padding-left: 1em;
-  text-align: center;
 }
+
+.activity-card {
+  color: #CBC9CF;
+  background-color: #46424D;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #202020;
+  margin: 20px;
+  /* margin-top: 0px; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.actv-completed-catg {
+  margin: 10px 0px 10px 10px;
+  font-weight: 400;
+}
+
+.card-text {
+  margin: 4px;
+  font-weight: 300;
+}
+
+.actv-completed-color {
+  /* width: 20%; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.colored-box {
+  margin: 10px 10px 0px 0px;
+  background-color: #B3FD78;
+  height: 28px;
+  width: 4px;
+}
+
+.meditate-color {
+background-color: #C278FD;
+}
+
+.exercise-color {
+  background-color: #FD8078;
+}
+
 .select-category {
   font-size: 17px;
   margin-bottom: 10px;
 }
 .activity-box {
   background-color: #46424D;
-  margin: 30px;
+  margin: 33px;
   padding: 3rem 5rem 4rem 5rem;
   width: 73%;
   min-height: 35%;
@@ -62,7 +114,6 @@ h2 {
   border-color: #FD8078;
 }
 .start-button {
-/*   display: inline-block; */
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -74,6 +125,10 @@ h2 {
   color: #FFF;
   font-weight: 300;
   margin-bottom: 50px;
+  cursor: pointer;
+}
+.makeEmojiBigger {
+  font-size: 200px;
 }
 .button {
   width: 8rem;
@@ -148,7 +203,7 @@ h2 {
 }
 .warning-message {
   color: #EFB7EC;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 .warning-image {
   max-width: 20px;
@@ -204,6 +259,18 @@ label {
 }
 .hidden {
   display: none;
+}
+
+#createNewAct {
+  margin-top: 40px;
+  margin-bottom: 500px;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  /* white-space: nowrap; */
 }
 /* Main background: #2B2733
 Text on main background: #CBC9CF

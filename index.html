@@ -13,10 +13,11 @@
         <section class="activity-box">
           <section class="activity-timer hidden">
             <div class="category-for-timer"></div>
-            <div class="countdown">Time</div>
+            <div class="countdown"></div>
             <button class="start-button">START</button>
             <button class="start-btn hidden" id="logActivity">LOG ACTIVITY</button>
           </section>
+          <button class="start-btn hidden"  id="createNewAct">CREATE A NEW ACTIVITY</button>
         <h3 class="select-category">Select a category:</h3>
         <form class=actv-control-center>
           <section class="actv-button-row" id="actv-buttons">
@@ -52,9 +53,13 @@
       </section>
       <section class="past-activity">
        <h2 class="past-act-header">Past Activity</h2>
-       <section class="words">
-        <p>You haven't logged any activities yet.</p>
-        <p>Complete the form to the left to get started!</p>
+        <div class="no-activity-msg">
+         <p>You haven't logged any activities yet.</p>
+         <p>Complete the form to the left to get started!</p>
+        </div>
+       <section class="logged-activities">
+        <article class="complete-activities" id="cardContainer">
+        </article>
       </section>
       </section>
       </section>

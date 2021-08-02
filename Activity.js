@@ -7,6 +7,7 @@ class Activity {
     this.completed = false;
     this.id = Date.now();
   }
+  
   countDown(startTime) {
       startTimerBtn.disabled = true;
       var timer = startTime, minutes, seconds;
@@ -19,7 +20,6 @@ class Activity {
         if (--timer < 0) {
           timer = 0;
           newActivity.markComplete();
-          window.alert('You done!');
         }
       }, 1000);
   };
@@ -28,9 +28,8 @@ class Activity {
     this.completed = true;
     startTimerBtn.innerText = 'COMPLETE!';
     logActivity.classList.remove('hidden');
+    displayCongratsMessage();
   };
-
   saveToStorage() {
-
   };
 };
