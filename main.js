@@ -20,6 +20,8 @@ var countDown = document.querySelector('.countdown');
 var logActivity = document.querySelector('#logActivity');
 var activityTimer= document.querySelector('.activity-timer');
 var cardContainer = document.querySelector('#cardContainer');
+var createNewbtn = document.querySelector('#createNewAct');
+
 var category;
 var activityIsClicked = false;
 var startTime;
@@ -29,9 +31,9 @@ var invalidCharacters = [
   'e',
   'E',
 ];
-var activityToAdd = [];
 var newActivity;
 var cardColor;
+var storedActivities = [];
 
 activityBtns.addEventListener('click', function(e) {
   e.preventDefault();
@@ -56,8 +58,21 @@ startTimerBtn.addEventListener('click', function() {
 logActivity.addEventListener('click', function() {
   hideTimerDisplayNewActvBtn();
   changeCategoryCardColor(category);
-  addEventCard(newActivity, cardColor);
+  addEventCard(storedActivities, cardColor);
+  newActivity.saveToStorage();
 });
+
+createNewAct.addEventListener('click', function() {
+  location.reload()});
+
+// window.addEventListener('load', getFromStorage);
+window.onload = getFromStorage();
+
+function getFromStorage() {
+  var retrievedActivities = localStorage.getItem('activityCollection');
+  var parsedActivities = JSON.parse(retrievedActivities);
+  storedActivities = parsedActivities;
+};
 
 function displayCongratsMessage() {
   countDown.innerText = 'Pound It!';
@@ -65,29 +80,31 @@ function displayCongratsMessage() {
   startTimerBtn.classList.add('makeEmojiBigger');
 };
 
-function addEventCard(completedActvDetails, cardColor) {
-  cardContainer.innerHTML += `
-  <section class="activity-card">
-    <div class="actv-completed-catg">${completedActvDetails.category}
-      <div class="card-text">${completedActvDetails.minutes} MIN ${completedActvDetails.seconds} SECONDS</div>
-      <div class="card-text">${completedActvDetails.description}</div>
+function addEventCard(storedActivities, cardColor) {
+  for (var i = 0; i < storedActivities.length; i++) {
+    cardContainer.innerHTML += `
+    <section class="activity-card">
+    <div class="actv-completed-catg">${storedActivities[i].category}
+    <div class="card-text">${storedActivities[i].minutes} MIN ${storedActivities[i].seconds} SECONDS</div>
+    <div class="card-text">${storedActivities[i].description}</div>
     </div>
     <div class="actv-completed-color">
-      <div class="colored-box ${cardColor}"></div>
+    <div class="colored-box ${storedActivities[i].cardColor}"></div>
     </div>
-  </section>`
+    </section>`
+  };
 };
 
 function changeCategoryCardColor(category) {
   if(category === 'Meditate') {
-    cardColor = 'meditate-color'
+    console.log(newActivity.cardColor);
+    newActivity.cardColor = 'meditate-color';
   } else if(category === 'Exercise') {
-    cardColor = 'exercise-color';
+    newActivity.cardColor = 'exercise-color';
   }
 };
 
 function hideTimerDisplayNewActvBtn() {
-  var createNewbtn = document.querySelector('#createNewAct');
   var text = document.querySelector('.no-activity-msg');
   activityTimer.classList.add('hidden');
   activityHeader.innerText = 'Completed Activity';
@@ -127,7 +144,7 @@ function checkForm() {
 function instantiateNewActivity() {
   if (minutes.value && seconds.value && accomplishment.value && activityIsClicked) {
     newActivity = new Activity(category, accomplishment.value, parseInt(minutes.value), parseInt(seconds.value));
-    activityToAdd.push(newActivity);
+    storedActivities.push(newActivity);
   };
 };
 
