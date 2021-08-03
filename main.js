@@ -2,9 +2,9 @@ var activityBtns = document.querySelector('.actv-button-row');
 var activityControlCntr = document.querySelector('.actv-control-center');
 var activityHeader = document.querySelector('.new-act-header');
 var selectCategory = document.querySelector('.select-category');
-var studyBtn = document.querySelector('#study-button');
-var meditateBtn = document.querySelector('#meditate-button');
-var exerciseBtn = document.querySelector('#exercise-button');
+var studyBtn = document.querySelector('#studyButton');
+var meditateBtn = document.querySelector('#meditateButton');
+var exerciseBtn = document.querySelector('#exerciseButton');
 var inputTimeFields = document.querySelector('.time');
 var inputAccompField = document.querySelector('.prompt')
 var accomplishment = document.querySelector('#accomplishment');
@@ -21,7 +21,7 @@ var logActivity = document.querySelector('#logActivity');
 var activityTimer= document.querySelector('.activity-timer');
 var cardContainer = document.querySelector('#cardContainer');
 var createNewbtn = document.querySelector('#createNewAct');
-
+var text = document.querySelector('.no-activity-msg');
 var category;
 var activityIsClicked = false;
 var startTime;
@@ -40,17 +40,16 @@ activityBtns.addEventListener('click', function(e) {
   displayActiveActivity(e);
   changeTimerColor();
 });
-
 inputTimeFields.addEventListener('keydown', function(e) {
   if (invalidCharacters.includes(e.key)) {
     e.preventDefault();
   }
 });
-
 submitBtn.addEventListener('click', function() {
   checkForm();
   createCountDown();
 });
+
 
 startTimerBtn.addEventListener('click', function() {
   newActivity.countDown(startTime)});
@@ -63,15 +62,21 @@ logActivity.addEventListener('click', function() {
 });
 
 createNewAct.addEventListener('click', function() {
-  location.reload()});
+  getFromStorage();
+  addEventCard(storedActivities, cardColor);
+  location.reload()
+});
 
-// window.addEventListener('load', getFromStorage);
-window.onload = getFromStorage();
+window.onload = function() {
+  getFromStorage();
+  hideNoPastActvMsg();
+  addEventCard(storedActivities, cardColor);
+}
 
 function getFromStorage() {
-  var retrievedActivities = localStorage.getItem('activityCollection');
+  var retrievedActivities = localStorage.getItem('activityCollection') || '[]';
   var parsedActivities = JSON.parse(retrievedActivities);
-  storedActivities = parsedActivities;
+  storedActivities = JSON.parse(retrievedActivities);
 };
 
 function displayCongratsMessage() {
@@ -81,6 +86,7 @@ function displayCongratsMessage() {
 };
 
 function addEventCard(storedActivities, cardColor) {
+  cardContainer.innerHTML = '';
   for (var i = 0; i < storedActivities.length; i++) {
     cardContainer.innerHTML += `
     <section class="activity-card">
@@ -97,7 +103,6 @@ function addEventCard(storedActivities, cardColor) {
 
 function changeCategoryCardColor(category) {
   if(category === 'Meditate') {
-    console.log(newActivity.cardColor);
     newActivity.cardColor = 'meditate-color';
   } else if(category === 'Exercise') {
     newActivity.cardColor = 'exercise-color';
@@ -105,14 +110,15 @@ function changeCategoryCardColor(category) {
 };
 
 function hideTimerDisplayNewActvBtn() {
-  var text = document.querySelector('.no-activity-msg');
   activityTimer.classList.add('hidden');
   activityHeader.innerText = 'Completed Activity';
   createNewbtn.classList.remove('hidden');
-  //maybe we should make this a helper function??
-  let element = document.querySelector('.no-activity-msg');
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
+  hideNoPastActvMsg();
+};
+
+function hideNoPastActvMsg() {
+  if(storedActivities.length > 0) {
+    text.innerHTML = '';
   }
 };
 
@@ -158,7 +164,6 @@ function changeToTimerView() {
   timerCategory.innerText = accomplishment.value;
   }
 };
-
 function changeTimerColor() {
   if(category === 'Study') {
     startTimerBtn.classList.add('study-timer');
@@ -174,21 +179,20 @@ function changeTimerColor() {
     startTimerBtn.classList.add('meditate-timer');
   }
 };
-
 function displayActiveActivity(e) {
   e.preventDefault();
   activityIsClicked = true;
   var btnID = event.target.id;
   category = event.target.innerText
-  if (btnID === "study-button") {
+  if (btnID === "studyButton") {
     event.target.className += ' active-study';
     meditateBtn.classList.remove('active-meditate');
     exerciseBtn.classList.remove('active-exercise');
-  } else if (btnID === "meditate-button") {
+  } else if (btnID === "meditateButton") {
     event.target.className += ' active-meditate';
     studyBtn.classList.remove('active-study');
     exerciseBtn.classList.remove('active-exercise');
-  } else if (btnID === "exercise-button") {
+  } else if (btnID === "exerciseButton") {
     event.target.className += ' active-exercise';
     meditateBtn.classList.remove('active-meditate');
     studyBtn.classList.remove('active-study');

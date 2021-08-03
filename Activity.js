@@ -8,7 +8,6 @@ class Activity {
     this.id = Date.now();
     this.cardColor = null;
   }
-
   countDown(startTime) {
       startTimerBtn.disabled = true;
       var timer = startTime, minutes, seconds;
@@ -24,14 +23,12 @@ class Activity {
         }
       }, 1000);
   };
-
   markComplete() {
     this.completed = true;
     startTimerBtn.innerText = 'COMPLETE!';
     logActivity.classList.remove('hidden');
     displayCongratsMessage();
   };
-
   saveToStorage() {
     var stringifiedActivities = JSON.stringify(storedActivities);
     localStorage.setItem('activityCollection', stringifiedActivities);
