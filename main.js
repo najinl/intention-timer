@@ -1,55 +1,54 @@
+var accomplishment = document.querySelector('#accomplishment');
 var activityBtns = document.querySelector('.actv-button-row');
 var activityControlCntr = document.querySelector('.actv-control-center');
+var activityIsClicked = false;
 var activityHeader = document.querySelector('.new-act-header');
-var selectCategory = document.querySelector('.select-category');
-var studyBtn = document.querySelector('#studyButton');
-var meditateBtn = document.querySelector('#meditateButton');
+var activityTimer= document.querySelector('.activity-timer');
+var cardColor;
+var cardContainer = document.querySelector('#cardContainer');
+var category;
+var countDown = document.querySelector('.countdown');
+var createNewbtn = document.querySelector('#createNewAct');
 var exerciseBtn = document.querySelector('#exerciseButton');
-var inputTimeFields = document.querySelector('.time');
 var inputAccompField = document.querySelector('.prompt')
-var accomplishment = document.querySelector('#accomplishment');
+var inputFields = document.querySelectorAll('.input-field');
+var inputTimeFields = document.querySelector('.time');
+var logActivity = document.querySelector('#logActivity');
+var meditateBtn = document.querySelector('#meditateButton');
 var minutes = document.querySelector('#minutes');
+var newActivity;
 var seconds = document.querySelector('#seconds');
-var submitBtn = document.querySelector('#startActivity');
+var selectCategory = document.querySelector('.select-category');
+var storedActivities = [];
+var startTime;
 var startTimerBtn = document.querySelector('.start-button');
+var studyBtn = document.querySelector('#studyButton');
+var submitBtn = document.querySelector('#startActivity');
+var text = document.querySelector('.no-activity-msg');
 var warningMsgAcc = document.querySelector('#warningMsgAccomp');
 var warningMsgMin = document.querySelector('#warningMsgMin');
 var warningMsgSec = document.querySelector('#warningMsgSec');
-var inputFields = document.querySelectorAll('.input-field');
-var countDown = document.querySelector('.countdown');
-var logActivity = document.querySelector('#logActivity');
-var activityTimer= document.querySelector('.activity-timer');
-var cardContainer = document.querySelector('#cardContainer');
-var createNewbtn = document.querySelector('#createNewAct');
-var text = document.querySelector('.no-activity-msg');
-var category;
-var activityIsClicked = false;
-var startTime;
 var invalidCharacters = [
   '-',
   '+',
   'e',
   'E',
 ];
-var newActivity;
-var cardColor;
-var storedActivities = [];
 
 activityBtns.addEventListener('click', function(e) {
-  e.preventDefault();
   displayActiveActivity(e);
-  changeTimerColor();
 });
+
 inputTimeFields.addEventListener('keydown', function(e) {
   if (invalidCharacters.includes(e.key)) {
     e.preventDefault();
   }
 });
+
 submitBtn.addEventListener('click', function() {
   checkForm();
   createCountDown();
 });
-
 
 startTimerBtn.addEventListener('click', function() {
   newActivity.countDown(startTime)});
@@ -124,9 +123,9 @@ function hideNoPastActvMsg() {
 
 function createCountDown() {
   startTime = parseInt(minutes.value) * 60 + parseInt(seconds.value);
-    if(parseInt(minutes.value) < 10) {
+    if(parseInt(minutes.value) < 10 && minutes.value.length < 2) {
     minutes.value = '0' + minutes.value;
-  } if(parseInt(seconds.value) < 10) {
+  } if(parseInt(seconds.value) < 10 && seconds.value.length < 2) {
     seconds.value = '0' + seconds.value;
   }
   countDown.innerText = `${minutes.value}:${seconds.value}`;
@@ -134,15 +133,20 @@ function createCountDown() {
 
 function checkForm() {
   event.preventDefault();
+  warningMsgAcc.innerHTML = '';
+  warningMsgMin.innerHTML = '';
+  warningMsgSec.innerHTML = '';
   for(var i = 0; i < inputFields.length; i++) {
     if (!inputFields[i].value && inputFields[i].id === "accomplishment") {
-      warningMsgAcc.innerHTML = '<img class="warning-image" src="./assets/warning.svg"> A description is required.';
-    } else if (!inputFields[i].value && inputFields[i].id === "minutes") {
-      warningMsgMin.innerHTML = '<img class="warning-image" src="./assets/warning.svg"> Minutes are required.';
-    } else if (!inputFields[i].value && inputFields[i].id === "seconds") {
-      warningMsgSec.innerHTML = '<img class="warning-image" src="./assets/warning.svg"> Seconds are required.';
+      warningMsgAcc.innerHTML = '<img class="warning-image" src="./assets/warning.svg" alt="Error/caution icon"> A description is required.';
+    }else if (!inputFields[i].value && inputFields[i].id === "minutes") {
+      warningMsgMin.innerHTML = '<img class="warning-image" src="./assets/warning.svg" alt="Error/caution icon"> Minutes are required.';
+    }else if(!inputFields[i].value && inputFields[i].id === "seconds") {
+      warningMsgSec.innerHTML = '<img class="warning-image" src="./assets/warning.svg" alt="Error/caution icon"> Seconds are required.';
+      return;
     }
   }
+  createCountDown();
   instantiateNewActivity();
   changeToTimerView();
 };
@@ -164,6 +168,7 @@ function changeToTimerView() {
   timerCategory.innerText = accomplishment.value;
   }
 };
+
 function changeTimerColor() {
   if(category === 'Study') {
     startTimerBtn.classList.add('study-timer');
@@ -179,6 +184,7 @@ function changeTimerColor() {
     startTimerBtn.classList.add('meditate-timer');
   }
 };
+
 function displayActiveActivity(e) {
   e.preventDefault();
   activityIsClicked = true;
@@ -197,4 +203,5 @@ function displayActiveActivity(e) {
     meditateBtn.classList.remove('active-meditate');
     studyBtn.classList.remove('active-study');
   }
+  changeTimerColor();
 };
