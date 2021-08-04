@@ -22,15 +22,24 @@ The goals of this project were to learn on the foundations of local storage and 
 
 ## Web App Attributes
 - Allow user to choose between 3 categories
-- <img width="1438" alt="Screen Shot 2021-08-03 at 8 04 08 PM" src="https://user-images.githubusercontent.com/39206140/128110933-a1933cd4-1c5b-4820-8e49-e1e86dd90589.png">
+<img width="1438" alt="Screen Shot 2021-08-03 at 8 04 08 PM" src="https://user-images.githubusercontent.com/39206140/128110933-a1933cd4-1c5b-4820-8e49-e1e86dd90589.png">
+
 - Allow user to input text into a single field of their preference
-- <img width="1438" alt="Screen Shot 2021-08-03 at 8 05 53 PM" src="https://user-images.githubusercontent.com/39206140/128110975-98b1e615-e2fe-4905-9c8b-93ccc2774e6b.png">
+<img width="1438" alt="Screen Shot 2021-08-03 at 8 05 53 PM" src="https://user-images.githubusercontent.com/39206140/128110975-98b1e615-e2fe-4905-9c8b-93ccc2774e6b.png">
+
 - Allow user to input a time in minutes and seconds
-- <img width="1439" alt="Screen Shot 2021-08-03 at 8 06 02 PM" src="https://user-images.githubusercontent.com/39206140/128111100-8a8b6bb7-6b94-4235-aae7-bdfc35315385.png">
+<img width="1439" alt="Screen Shot 2021-08-03 at 8 06 02 PM" src="https://user-images.githubusercontent.com/39206140/128111100-8a8b6bb7-6b94-4235-aae7-bdfc35315385.png">
+
 - User will see a visual representation of a timer and will be congratulated when timer hits 0.
-- <img width="1437" alt="Screen Shot 2021-08-03 at 8 06 29 PM" src="https://user-images.githubusercontent.com/39206140/128111164-379d0230-edcb-4730-b66b-9f6292ec655a.png">
+<img width="1437" alt="Screen Shot 2021-08-03 at 8 06 29 PM" src="https://user-images.githubusercontent.com/39206140/128111164-379d0230-edcb-4730-b66b-9f6292ec655a.png">
+
 - User will be allowed to set a new activity and goal.
+<img width="1424" alt="Screen Shot 2021-08-03 at 8 06 38 PM" src="https://user-images.githubusercontent.com/39206140/128111228-89eaee68-c211-466b-ae57-32c93d5d1268.png">
+
 - User will see a visual representation of activities they have created represented by cards.
+<img width="1435" alt="Screen Shot 2021-08-03 at 8 08 15 PM" src="https://user-images.githubusercontent.com/39206140/128111274-014fba44-da66-46a6-a4a9-75959177baae.png">
+
+
 
 ## Contributors
 - Nadia Naji
