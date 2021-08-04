@@ -24,6 +24,7 @@ The goals of this project were to learn on the foundations of local storage and 
 - Allow user to choose between 3 categories
 - <img width="1438" alt="Screen Shot 2021-08-03 at 8 04 08 PM" src="https://user-images.githubusercontent.com/39206140/128110933-a1933cd4-1c5b-4820-8e49-e1e86dd90589.png">
 - Allow user to input text into a single field of their preference
+- <img width="1438" alt="Screen Shot 2021-08-03 at 8 05 53 PM" src="https://user-images.githubusercontent.com/39206140/128110975-98b1e615-e2fe-4905-9c8b-93ccc2774e6b.png">
 - Allow user to input a time in minutes and seconds
 - User will see a visual representation of a timer and will be congratulated when timer hits 0
 - User will be allowed to set a new activity and goal.
