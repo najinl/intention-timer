@@ -2,17 +2,18 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #2B2733;
   margin: 0px;
-  font-weight: 300;
 }
+
 header {
- display: flex;
- justify-content: center;
- align-items: center;
- color: #FFF;
- font-size: 10px;
- background-color: #46424D;
- margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: 10px;
+  background-color: #46424D;
+  margin: 0px;
 }
+
 h2 {
   color: #CBC9CF;
   padding: 10px 10px 0px 33px;
@@ -22,17 +23,19 @@ h2 {
 p {
   margin-bottom: 0px;
 }
+
 .main-page {
- display: flex;
- align-items: flex-start;
- width: 100%;
- max-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-height: 100%;
 }
+
 .new-activity {
   flex: 2;
   border-right: 2px solid #46424D;
-  /* margin-top: 10px; */
 }
+
 .past-activity {
   flex: 1;
   width: 30%;
@@ -49,9 +52,8 @@ p {
   color: #CBC9CF;
   background-color: #46424D;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px #202020;
+  box-shadow: 5px 5px 5px 0px #202020;
   margin: 20px;
-  /* margin-top: 0px; */
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -59,16 +61,13 @@ p {
 
 .actv-completed-catg {
   margin: 10px 0px 10px 10px;
-  font-weight: 400;
 }
 
 .card-text {
   margin: 4px;
-  font-weight: 300;
 }
 
 .actv-completed-color {
-  /* width: 20%; */
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -82,8 +81,12 @@ p {
   width: 4px;
 }
 
+.study-button {
+  background-color: #B3FD78;
+}
+
 .meditate-color {
-background-color: #C278FD;
+  background-color: #C278FD;
 }
 
 .exercise-color {
@@ -94,6 +97,7 @@ background-color: #C278FD;
   font-size: 17px;
   margin-bottom: 10px;
 }
+
 .activity-box {
   background-color: #46424D;
   margin: 33px;
@@ -102,17 +106,21 @@ background-color: #C278FD;
   min-height: 35%;
   color: white;
   border-radius: 1%;
-  box-shadow: 5px 5px 5px #202020;
+  box-shadow: 5px 5px 5px 0px #202020;
 }
+
 .study-timer {
   border-color: #B3FD78;
 }
+
 .meditate-timer {
   border-color: #C278FD;
 }
+
 .exercise-timer {
   border-color: #FD8078;
 }
+
 .start-button {
   width: 300px;
   height: 300px;
@@ -123,13 +131,14 @@ background-color: #C278FD;
   cursor: pointer;
   font-size: 22px;
   color: #FFF;
-  font-weight: 300;
   margin-bottom: 50px;
   cursor: pointer;
 }
+
 .makeEmojiBigger {
   font-size: 200px;
 }
+
 .button {
   width: 8rem;
   background: transparent;
@@ -148,77 +157,83 @@ background-color: #C278FD;
   align-items: center;
   cursor: pointer;
 }
+
 .activity-timer {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   font-size: 25px;
-  font-weight: 300;
-  /* padding-bottom: 200px; */
 }
+
 .actv-button-row {
-  padding-top: 0px;
-  margin-top: 0px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items:flex-start;
 }
+
 .study-button {
   background-image: url("./assets/study.svg");
-  display: block;
+  display: flex;
+  justify-content: center;
+  width: 14em;
+  height: 5em;
 }
+
 .meditate-button {
   background-image: url("./assets/meditate.svg");
-  display: block;
+  display: flex;
+  justify-content: center;
+  width: 14em;
+  height: 5em;
 }
+
 .exercise-button {
   background-image: url("./assets/exercise.svg");
-  display: block;
+  display: flex;
+  justify-content: center;
+  width: 14em;
+  height: 5em;
 }
+
 .active-study {
   background-image: url("./assets/study-active.svg");
-  background-repeat: no-repeat;
-  background-size: 2em;
-  background-position: 50% 20%;
   color: #B3FD78;
   border-color: #B3FD78;
 }
+
 .active-meditate {
   background-image: url("./assets/meditate-active.svg");
-  background-repeat: no-repeat;
-  background-size: 2em;
-  background-position: 50% 20%;
   color: #C278FD;
   border-color: #C278FD;
 }
+
 .active-exercise {
   background-image: url("./assets/exercise-active.svg");
-  background-repeat: no-repeat;
-  background-size: 2em;
-  background-position: 50% 20%;
   color: #FD8078;
   border-color: #FD8078;
 }
+
 .warning-message {
   color: #EFB7EC;
-  /* font-weight: bold; */
 }
+
 .warning-image {
-  max-width: 20px;
-  max-height: 20px;
+  width: 20px;
+  height: 20px;
 }
+
 .prompt {
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding: 4em 0em 4em 0em;
 }
+
 label {
-  display: block;
-  margin-bottom: 25px;
-  margin-right: 150px;
+  display: flex;
+  margin: 0px 150px 25px 0px;
   font-size: 18px;
 }
+
 .input-field {
   border: none;
   background: transparent;
@@ -228,65 +243,45 @@ label {
   color: white;
   cursor: text;
 }
-/* .warning-field {
-  border-bottom: 1px solid #EFB7EC;
-} */
+
 .time {
   display: flex;
   justify-content: space-between;
   padding-bottom: 4em;
 }
+
 .minute {
   margin-right: 5em;
   width: 50%;
 }
+
 .second {
   width: 50%;
 }
+
 .start-btn-container {
   display: flex;
   flex-direction: row-reverse;
 }
+
 .start-btn {
   cursor: pointer;
   width: 250px;
   height: 45px;
   font-size: 18px;
 }
+
 .countdown {
   font-size: 70px;
-  /* font-weight: 400; */
-}
-.hidden {
-  display: none;
+  font-weight: 900px;
+  padding: 0px 0px 50px 0px;
 }
 
 #createNewAct {
-  margin-top: 40px;
-  margin-bottom: 500px;
+  margin: 40px 25% 500px 25%;
   width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
-
-  /* padding-left: 20px;
-  padding-right: 20px; */
-  /* white-space: nowrap; */
 }
-/* Main background: #2B2733
-Text on main background: #CBC9CF
-Header, cards: #46424D
-Card shadow: #26222D
-Text on header and cards: #FFF
-Study: #B3FD78
-Meditate: #C278FD
-Exercise: #FD8078
-Error: #EFB7EC */
-/* Main background: #2B2733
-Text on main background: #CBC9CF
-Header, cards: #46424D
-Card shadow: #26222D
-Text on header and cards: #FFF
-Study: #B3FD78
-Meditate: #C278FD
-Exercise: #FD8078
-Error: #EFB7EC */
+
+.hidden {
+  display: none;
+}

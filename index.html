@@ -2,6 +2,7 @@
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <title>Intention Timer</title>
   </head>
   <body>
     <header>
@@ -22,37 +23,38 @@
         <form class=actv-control-center>
           <section class="actv-button-row">
           <!-- <h3 class="form-title">Select a Category:</h3> -->
-            <button name="actv-btn" class="button study-button" id="studyButton">Study</button>
-            <button name="actv-btn" class="button meditate-button" id="meditateButton">Meditate</button>
-            <button name="actv-btn" class="button exercise-button"  id="exerciseButton">Exercise</button>
+            <button name="actv-btn" class="button study-button" id="studyButton" alt="Light bulb">Study</button>
+            <button name="actv-btn" class="button meditate-button" id="meditateButton" alt="Lotus">Meditate</button>
+            <button name="actv-btn" class="button exercise-button"  id="exerciseButton" alt="shoe">Exercise</button>
           </section>
           <section class="prompt">
+            <div class="warning-message" id="warningMsgAct"></div>
             <label for="accomplishment">What would you like to accomplish during this time?</label>
             <input type="text" id="accomplishment" class="input-field warning-field">
-            <p class="warning-message" id="warningMsgAccomp"></p>
+            <div class="warning-message" id="warningMsgAccomp"></div>
           </section>
           <!-- create input field for minutes and seconds -->
             <section class="time">
               <section class="minute">
                 <label for="minutes">Minutes</label>
                 <input type="number" id="minutes" class="input-field warning-field" min="0">
-                <p class="warning-message" id="warningMsgMin"></p>
+                <div class="warning-message" id="warningMsgMin"></div>
               </section>
               <section class="second">
                 <label for="seconds">Seconds</label>
                 <input type="number" id="seconds" class="input-field warning-field" min="0" max="60">
-                <p class="warning-message" id="warningMsgSec"></p>
+                <div class="warning-message" id="warningMsgSec"></div>
               </section>
             </section>
             <!-- create button should submit inputted information? -->
             <section class="start-btn-container">
               <input type="submit" value="START ACTIVITY" class="start-btn" id="startActivity">
            </section>
-        </form>
-      </section>
+         </form>
+        </section>
       </section>
       <section class="past-activity">
-       <h2 class="past-act-header">Past Activity</h2>
+       <h2 class="past-act-header">Past Activities</h2>
         <div class="no-activity-msg">
          <p>You haven't logged any activities yet.</p>
          <p>Complete the form to the left to get started!</p>
@@ -62,7 +64,7 @@
         </article>
       </section>
       </section>
-      </section>
+    </section>
   </body>
   <script src="activity.js"></script>
   <script src="main.js"></script>
