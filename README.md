@@ -3,6 +3,9 @@
 ## Project Repo
 https://github.com/najinl/intention-timer
 
+## Deployable link
+https://najinl.github.io/intention-timer/
+
 ## Technology
 Javascript, HTML, CSS, Chrome Dev Tools, Github
 
@@ -17,7 +20,7 @@ Javascript, HTML, CSS, Chrome Dev Tools, Github
 The task of this project entails building a timer that allows a user to log a category, acommplishment, and the duration of a certain activity.  There are three seperate categories (Study, Meditate, Exercise) that are nominated with their own colors. In doing so, these colors will allow a user to easily visualize and track the information throughout the web app.  The user's input will generate a timer that countdowns from a specified time that was inputted and a FIST BUMP will appear with a congratulatory message and that activity will be logged. Local storage was implemented in this project to allow users to create new activities and to view their history of activities even after the web app is refreshed.
 
 ## Learning Goals
-The goals of this project were to learn on the foundations of local storage and improve our ability to differentiate the Data Model from the DUMB.  Refactoring following BEM and SPACCS conventions and building upon each team member's Javascript foundations as a team is best.
+The goals of this project were to learn on the foundations of local storage and improve our ability to differentiate the Data Model from the DOM.  Refactoring following BEM and SPACCS conventions and building upon each team member's Javascript foundations as a team is best.
 
 
 ## Web App Attributes
